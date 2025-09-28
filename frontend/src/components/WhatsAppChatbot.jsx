@@ -132,16 +132,32 @@ const WhatsAppChatbot = () => {
         );
 
       case 'redirect':
+        const whatsappUrl = `https://wa.me/91${brandData.supportWhatsapp}?text=${encodeURIComponent(
+          `Hi Brizo Stay! I'm ${formData.name}. I'm interested in learning more about your PG accommodations. My phone number is ${formData.phone}.`
+        )}`;
+        
         return (
           <div className="space-y-4">
             <div className="bg-green-100 rounded-2xl p-4">
               <p className="text-green-800 text-sm">
-                Perfect! Redirecting you to WhatsApp now... 🚀
+                Perfect! Click below to continue on WhatsApp 🚀
               </p>
             </div>
-            <div className="flex items-center justify-center py-4">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-black"></div>
-            </div>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-xl text-center transition-colors duration-200"
+            >
+              Continue on WhatsApp
+            </a>
+            <Button
+              onClick={resetChat}
+              variant="outline"
+              className="w-full text-sm"
+            >
+              Start Over
+            </Button>
           </div>
         );
 
