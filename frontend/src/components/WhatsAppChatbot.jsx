@@ -206,10 +206,10 @@ const WhatsAppChatbot = () => {
       <Button
         onClick={() => setIsOpen(!isOpen)}
         size="lg"
-        className={`w-16 h-16 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 ${
+        className={`w-16 h-16 rounded-full shadow-lg transition-all duration-200 hover:scale-105 ${
           isOpen 
             ? 'bg-gray-800 hover:bg-gray-700' 
-            : 'bg-green-500 hover:bg-green-600 animate-pulse'
+            : 'bg-green-500 hover:bg-green-600'
         } text-white`}
       >
         {isOpen ? (
@@ -221,7 +221,7 @@ const WhatsAppChatbot = () => {
 
       {/* Notification Badge */}
       {!isOpen && (
-        <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center animate-bounce">
+        <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
           1
         </div>
       )}
