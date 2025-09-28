@@ -53,14 +53,14 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start min-h-[600px]">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 lg:pt-8">
             <div className="space-y-6">
               <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium">
                 <Star className="h-4 w-4 mr-2" />
                 Mumbai's #1 Co-living Brand
               </div>
               
-              <h1 className="text-5xl lg:text-7xl font-black leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-black leading-tight">
                 <span className="text-black">Where</span>
                 <br />
                 <span className="text-black italic">Innovation</span>
@@ -68,38 +68,38 @@ const HeroSection = () => {
                 <span className="text-black">meets</span> <span className="text-black italic">Living</span>
               </h1>
               
-              <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
+              <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
                 Experience India's first AI-powered co-living ecosystem. From 30-second KYC to smart complaint resolution - everything is designed for the modern professional.
               </p>
             </div>
 
             {/* Unique Features */}
-            <div className="grid grid-cols-1 gap-4">
+            <div className="space-y-3">
               {uniqueFeatures.map((feature, index) => (
-                <div key={index} className="flex items-center space-x-3 p-4 bg-gray-50 rounded-2xl border border-gray-200">
-                  <div className="p-2 bg-black text-white rounded-lg">
+                <div key={index} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-xl border border-gray-200">
+                  <div className="p-2 bg-black text-white rounded-lg flex-shrink-0">
                     {feature.icon}
                   </div>
-                  <span className="font-semibold text-black">{feature.text}</span>
+                  <span className="font-semibold text-black text-sm">{feature.text}</span>
                 </div>
               ))}
             </div>
 
             {/* BRIZO Values Teaser */}
             <div className="bg-black text-white p-6 rounded-3xl">
-              <h3 className="text-xl font-bold mb-3">🌟 BRIZO Philosophy</h3>
-              <p className="text-gray-300 mb-4">
+              <h3 className="text-lg font-bold mb-3">🌟 BRIZO Philosophy</h3>
+              <p className="text-gray-300 mb-4 text-sm">
                 <span className="font-bold text-white">B</span>etter living • <span className="font-bold text-white">R</span>eliability • <span className="font-bold text-white">I</span>nnovation • <span className="font-bold text-white">Z</span>ero hassle • <span className="font-bold text-white">O</span>utstanding service
               </p>
-              <div className="flex space-x-4">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Button 
-                  className="bg-white text-black hover:bg-gray-100 font-semibold rounded-2xl"
+                  className="bg-white text-black hover:bg-gray-100 font-semibold rounded-xl text-sm"
                 >
                   Explore Properties
                 </Button>
                 <Button 
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-black font-semibold rounded-2xl"
+                  className="border-2 border-white text-white hover:bg-white hover:text-black font-semibold rounded-xl text-sm"
                 >
                   Virtual Tour
                 </Button>
