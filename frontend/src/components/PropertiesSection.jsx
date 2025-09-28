@@ -21,6 +21,26 @@ const PropertiesSection = () => {
     'Gym': Dumbbell
   };
 
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setSearchLocation(value);
+    
+    if (value.trim()) {
+      const filtered = cities.filter(city => 
+        city.toLowerCase().includes(value.toLowerCase())
+      );
+      setFilteredCities(filtered);
+      setShowSuggestions(true);
+    } else {
+      setShowSuggestions(false);
+    }
+  };
+
+  const handleCitySelect = (city) => {
+    setSearchLocation(city);
+    setShowSuggestions(false);
+  };
+
   const nextProperty = () => {
     const nextIndex = (currentPropertyIndex + 1) % properties.length;
     setCurrentPropertyIndex(nextIndex);
