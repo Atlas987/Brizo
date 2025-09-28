@@ -26,10 +26,8 @@ const WhatsAppChatbot = () => {
       setStep('phone');
     } else if (step === 'phone' && formData.phone.trim()) {
       setStep('redirect');
-      // Redirect to WhatsApp after a short delay
-      setTimeout(() => {
-        redirectToWhatsApp();
-      }, 1500);
+      // Redirect to WhatsApp immediately
+      redirectToWhatsApp();
     }
   };
 
