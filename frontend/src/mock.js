@@ -71,9 +71,11 @@ export const features = [
 
 export const properties = [
   {
-    id: 1,
+    id: "972e4c99-8b4f-46cc-9869-3bdd9840bf41",
+    prop_id: "brizo",
     name: "Sayba Orchid 1706 - Girls (Kurla)",
     location: "Kurla, Mumbai",
+    address: "72, SG Barve Marg, Kurla Kajrolkar CHSL",
     rentFrom: 15000,
     images: [
       "https://rentokstorage1753704434.blob.core.windows.net/due-type-images/due-type-images/CzaoI0lnMCf3YjdarDInxUot4XZ2/1754820513174-1000117972.jpg",
@@ -81,12 +83,17 @@ export const properties = [
       "https://rentokstorage1753704434.blob.core.windows.net/due-type-images/due-type-images/CzaoI0lnMCf3YjdarDInxUot4XZ2/1754820513178-1000117978.jpg"
     ],
     sharingTypes: ["2 Sharing", "3 Sharing"],
-    amenities: ["High-speed wifi", "24/7 Security", "Attached Washroom", "Power Backup"]
+    amenities: ["High-speed wifi", "24/7 Security guard", "Floor-wise water purifier", "Attached Washroom", "Power Backup", "CCTV"],
+    availableFor: "Any",
+    tenantsPreferred: "Working Professional",
+    description: "Modern PG accommodation for girls in the heart of Kurla with all essential amenities and 24/7 security."
   },
   {
-    id: 2,
+    id: "ea5d592a-8b57-4b22-a55c-0d89349f32a6", 
+    prop_id: "sayba74",
     name: "Sayba Orchid 1703 - Boys (Kurla)",
     location: "Kurla, Mumbai",
+    address: "72, SG Barve Marg, Kurla Kajrolkar CHSL",
     rentFrom: 10000,
     images: [
       "https://rentok-marketplace.s3.ap-south-1.amazonaws.com/PropertyImages/ea5d592a-8b57-4b22-a55c-0d89349f32a6/1753772695020_j5obao4jq3qro506g3qrn.webp",
@@ -94,12 +101,17 @@ export const properties = [
       "https://rentok-marketplace.s3.ap-south-1.amazonaws.com/PropertyImages/ea5d592a-8b57-4b22-a55c-0d89349f32a6/1753772695020_qih5zcv0d8tbph98ip0sj.webp"
     ],
     sharingTypes: ["2 Sharing", "3 Sharing"],
-    amenities: ["High-speed wifi", "24/7 Security", "Common Kitchen", "Gym"]
+    amenities: ["High-speed wifi", "24/7 Security", "Common Kitchen", "Gym", "Common TV", "Parking"],
+    availableFor: "Only boys",
+    tenantsPreferred: "Working Professional",
+    description: "Comfortable boys PG in Kurla with modern amenities, gym facilities and excellent connectivity."
   },
   {
-    id: 3,
+    id: "5e81427f-06ed-433d-a723-f45529e5f1f3",
+    prop_id: "peak",
     name: "Peak 25 101 - Boys (Vikhroli)",
     location: "Vikhroli, Mumbai",
+    address: "Peak 25 - Vaibhavlaxmi Builders & Developers, Kananwar Nagar, Vikhroli East",
     rentFrom: 10000,
     images: [
       "https://rentokstorage1753704434.blob.core.windows.net/room-images/RoomImages/1755601748466.jpg",
@@ -107,12 +119,17 @@ export const properties = [
       "https://rentokstorage1753704434.blob.core.windows.net/room-images/RoomImages/1755601805378.jpg"
     ],
     sharingTypes: ["2 Sharing", "3 Sharing"],
-    amenities: ["High-speed wifi", "24/7 Security", "Common TV", "Parking"]
+    amenities: ["High-speed wifi", "24/7 Security", "Common TV", "Parking", "Common Kitchen", "CCTV"],
+    availableFor: "Any",
+    tenantsPreferred: "Working Professional",
+    description: "Premium boys accommodation in Vikhroli with modern infrastructure and excellent transport connectivity."
   },
   {
-    id: 4,
+    id: "23d7c79a-a987-4fde-a977-81f27d855104",
+    prop_id: "vinayak58", 
     name: "Vinayak Heights C 901 - Girls (Ghatkopar)",
-    location: "Ghatkopar, Mumbai", 
+    location: "Ghatkopar, Mumbai",
+    address: "Vinayak Heights, Shop No. N. S. G.1, Ghatkopar East",
     rentFrom: 10000,
     images: [
       "https://rentok-storage-cdn.azureedge.net/static-assets/PropertyImages/23d7c79a-a987-4fde-a977-81f27d855104/1757508754276_2uhoeu8ooaphkcth29ubao.webp",
@@ -120,7 +137,46 @@ export const properties = [
       "https://rentok-storage-cdn.azureedge.net/static-assets/PropertyImages/23d7c79a-a987-4fde-a977-81f27d855104/1757508754277_4aq8fhivtjygdxvyq75r2j.webp"
     ],
     sharingTypes: ["2 Sharing", "3 Sharing"],
-    amenities: ["High-speed wifi", "24/7 Security", "Common Kitchen", "CCTV"]
+    amenities: ["High-speed wifi", "24/7 Security", "Common Kitchen", "CCTV", "Power Backup", "Common TV"],
+    availableFor: "Any",
+    tenantsPreferred: "Working Professional", 
+    description: "Safe and secure girls PG in Ghatkopar with modern amenities and easy access to metro stations."
+  },
+  {
+    id: "2da97ad7-a383-4836-9dc7-cc6d4dc3ea7e",
+    prop_id: "shivam74",
+    name: "Shivam Bhagirath A 502 - Boys (Ghatkopar)", 
+    location: "Ghatkopar, Mumbai",
+    address: "Shivam Bhagirath, Building 76, Ghatkopar East",
+    rentFrom: 10000,
+    images: [
+      "https://rentok-marketplace.s3.ap-south-1.amazonaws.com/due-type-images/CzaoI0lnMCf3YjdarDInxUot4XZ2/1752392439187-1000186940.jpg",
+      "https://rentok-marketplace.s3.ap-south-1.amazonaws.com/due-type-images/CzaoI0lnMCf3YjdarDInxUot4XZ2/1752392439194-1000186939.jpg",
+      "https://rentok-marketplace.s3.ap-south-1.amazonaws.com/due-type-images/CzaoI0lnMCf3YjdarDInxUot4XZ2/1752392439198-1000186936.jpg"
+    ],
+    sharingTypes: ["2 Sharing", "3 Sharing"],
+    amenities: ["High-speed wifi", "24/7 Security", "Common Kitchen", "Power Backup", "CCTV", "Parking"],
+    availableFor: "Any",
+    tenantsPreferred: "Working Professional",
+    description: "Well-maintained boys PG in Ghatkopar with excellent connectivity and modern living facilities."
+  },
+  {
+    id: "21bd2567-d018-48da-a8f7-9bebdcb8e4d5",
+    prop_id: "mass99",
+    name: "Mass Metro B 202 - Boys (Kurla)",
+    location: "Kurla, Mumbai", 
+    address: "Mass Metropolis, Vatsalabai Naik Nagar, Chembur",
+    rentFrom: 10000,
+    images: [
+      "https://rentok-marketplace.s3.ap-south-1.amazonaws.com/due-type-images/CzaoI0lnMCf3YjdarDInxUot4XZ2/1752238878920-43db83a7-a0c7-4121-b98d-cab9ce9bfc2b3597221827647915417.jpg",
+      "https://rentok-marketplace.s3.ap-south-1.amazonaws.com/due-type-images/CzaoI0lnMCf3YjdarDInxUot4XZ2/1752238878930-ef6b7f02-fa58-4bcf-9109-d4867d7cdc2d3435182905254146525.jpg",
+      "https://rentok-marketplace.s3.ap-south-1.amazonaws.com/due-type-images/CzaoI0lnMCf3YjdarDInxUot4XZ2/1752239118988-7125ef4e-41c1-4e59-a4e3-a4887a858cff1694923651405068927.jpg"
+    ],
+    sharingTypes: ["2 Sharing", "3 Sharing"],
+    amenities: ["High-speed wifi", "24/7 Security", "Gym", "Common TV", "Parking", "Power Backup"],
+    availableFor: "Any",
+    tenantsPreferred: "Working Professional",
+    description: "Modern boys PG near Kurla station with premium amenities and easy access to business districts."
   }
 ];
 
