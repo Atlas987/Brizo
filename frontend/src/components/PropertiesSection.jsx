@@ -73,9 +73,53 @@ const PropertiesSection = () => {
           <h2 className="text-4xl lg:text-6xl font-black mb-6 text-black">
             Discover Our Properties
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Explore our premium PG accommodations across Mumbai's prime locations
           </p>
+          
+          {/* Search Section */}
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-white rounded-3xl p-6 shadow-xl border-2 border-gray-200 relative">
+              <h3 className="text-lg font-bold mb-4 text-black flex items-center justify-center">
+                <MapPin className="h-5 w-5 mr-2" />
+                Find Properties by Location
+              </h3>
+              <div className="flex gap-3">
+                <div className="flex-1 relative">
+                  <Input
+                    type="text"
+                    placeholder="Search locality (Kurla, Ghatkopar, BKC...)"
+                    value={searchLocation}
+                    onChange={handleSearchChange}
+                    className="py-4 text-lg border-2 border-gray-300 focus:border-black rounded-2xl bg-white"
+                  />
+                  
+                  {/* City Suggestions */}
+                  {showSuggestions && filteredCities.length > 0 && (
+                    <div className="absolute top-full left-0 right-0 bg-white border-2 border-gray-200 rounded-2xl mt-2 shadow-xl z-20 max-h-48 overflow-y-auto">
+                      {filteredCities.map((city, index) => (
+                        <button
+                          key={index}
+                          onClick={() => handleCitySelect(city)}
+                          className="w-full text-left px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 flex items-center"
+                        >
+                          <MapPin className="h-4 w-4 text-gray-400 mr-3" />
+                          <span className="font-medium">{city}, Mumbai</span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <Button 
+                  size="lg"
+                  className="px-8 py-4 bg-black text-white hover:bg-gray-800 transition-all duration-200 rounded-2xl font-semibold"
+                >
+                  <Search className="h-5 w-5 mr-2" />
+                  Search
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Property Showcase */}
