@@ -1,15 +1,15 @@
 import React from 'react';
-import { Shield, Smartphone, CreditCard, Clock, Users, Headphones } from 'lucide-react';
+import { Shield, Smartphone, CreditCard, Clock, Users, Headphones, CheckCircle, Zap, Heart, Settings } from 'lucide-react';
 import { features, brandData } from '../mock';
 
 const FeaturesSection = () => {
   const iconMap = {
-    'Smart KYC': Shield,
+    'Smart KYC': CheckCircle,
     'Exclusive tenant membership': Users,
     'Digital payment': CreditCard,
     'Tenant smart app': Smartphone,
     'Tenant insurance': Shield,
-    'Faster complaint resolution': Headphones
+    'Faster complaint resolution': Zap
   };
 
   return (
