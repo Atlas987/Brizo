@@ -10,6 +10,9 @@ const PropertiesSection = () => {
   const [currentPropertyIndex, setCurrentPropertyIndex] = useState(0);
   const [selectedProperty, setSelectedProperty] = useState(properties[0]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [searchLocation, setSearchLocation] = useState('');
+  const [filteredCities, setFilteredCities] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
   const amenityIcons = {
     'High-speed wifi': Wifi,
