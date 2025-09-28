@@ -6,9 +6,11 @@ import HeroSection from "./components/HeroSection";
 import StatsSection from "./components/StatsSection";
 import FeaturesSection from "./components/FeaturesSection";
 import PropertiesSection from "./components/PropertiesSection";
+import ImageGallery from "./components/ImageGallery";
 import AboutSection from "./components/AboutSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import WhatsAppChatbot from "./components/WhatsAppChatbot";
 
 const Home = () => {
   return (
@@ -19,10 +21,12 @@ const Home = () => {
         <StatsSection />
         <FeaturesSection />
         <PropertiesSection />
+        <ImageGallery />
         <AboutSection />
         <ContactSection />
       </main>
       <Footer />
+      <WhatsAppChatbot />
     </div>
   );
 };
