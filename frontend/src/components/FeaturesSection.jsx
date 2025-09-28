@@ -33,46 +33,34 @@ const FeaturesSection = () => {
             return (
               <div 
                 key={index}
-                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-black hover:-translate-y-2"
+                className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-black hover:-translate-y-1"
               >
                 {/* Icon and Title */}
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="p-4 bg-black text-white rounded-2xl group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent className="h-6 w-6" />
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="p-3 bg-black text-white rounded-xl flex-shrink-0">
+                    <IconComponent className="h-5 w-5" />
                   </div>
-                  <h3 className="text-xl font-bold text-black">
+                  <h3 className="text-lg font-bold text-black line-clamp-2">
                     {feature.title}
                   </h3>
                 </div>
 
-                {/* Feature Image - Fixed sizing */}
-                <div className="mb-6 overflow-hidden rounded-2xl bg-gray-100">
-                  <img 
-                    src={feature.imgUrl} 
-                    alt={feature.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => {
-                      // Fallback for broken images
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'flex';
-                    }}
-                  />
-                  <div 
-                    className="hidden w-full h-48 bg-black text-white items-center justify-center rounded-2xl"
-                  >
-                    <IconComponent className="h-12 w-12" />
-                  </div>
-                </div>
-
                 {/* Feature Content */}
                 <div className="space-y-4">
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed text-sm">
                     {feature.body}
                   </p>
                   
+                  {/* Simplified Icon Display - No external images */}
+                  <div className="flex items-center justify-center py-6 bg-gray-50 rounded-2xl">
+                    <div className="p-6 bg-black text-white rounded-3xl">
+                      <IconComponent className="h-8 w-8" />
+                    </div>
+                  </div>
+                  
                   {/* Learn More Link */}
                   <button 
-                    className="inline-flex items-center text-sm font-bold text-black group-hover:translate-x-1 transition-transform duration-200 hover:underline"
+                    className="inline-flex items-center text-sm font-bold text-black group-hover:translate-x-1 transition-transform duration-200 hover:underline w-full justify-center py-2"
                   >
                     Learn More 
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
