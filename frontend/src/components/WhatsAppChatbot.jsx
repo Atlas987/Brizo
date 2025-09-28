@@ -37,7 +37,9 @@ const WhatsAppChatbot = () => {
     const message = encodeURIComponent(
       `Hi Brizo Stay! I'm ${formData.name}. I'm interested in learning more about your PG accommodations. My phone number is ${formData.phone}.`
     );
-    window.open(`https://wa.me/91${brandData.supportWhatsapp}?text=${message}`, '_blank');
+    // Use location.href for better compatibility
+    const whatsappUrl = `https://wa.me/91${brandData.supportWhatsapp}?text=${message}`;
+    window.location.href = whatsappUrl;
     setIsOpen(false);
     // Reset form
     setFormData({ name: '', phone: '' });
