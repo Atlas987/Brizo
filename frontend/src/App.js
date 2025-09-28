@@ -11,6 +11,7 @@ import AboutSection from "./components/AboutSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import WhatsAppChatbot from "./components/WhatsAppChatbot";
+import PropertyDetails from "./components/PropertyDetails";
 
 const Home = () => {
   return (
@@ -37,6 +38,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/brizo" element={<PropertyDetails />} />
+          <Route path="/sayba74" element={<PropertyDetails />} />
+          <Route path="/peak" element={<PropertyDetails />} />
+          <Route path="/vinayak58" element={<PropertyDetails />} />
+          <Route path="/shivam74" element={<PropertyDetails />} />
+          <Route path="/mass99" element={<PropertyDetails />} />
+          <Route path="/:propId" element={<PropertyDetails />} />
         </Routes>
       </BrowserRouter>
     </div>
