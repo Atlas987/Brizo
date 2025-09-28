@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, MapPin, Users, Wifi, Shield, Car, Dumbbell } from 'lucide-react';
+import { ChevronLeft, ChevronRight, MapPin, Users, Wifi, Shield, Car, Dumbbell, Search } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
-import { properties, brandData } from '../mock';
+import { Input } from './ui/input';
+import { properties, brandData, cities } from '../mock';
 
 const PropertiesSection = () => {
   const [currentPropertyIndex, setCurrentPropertyIndex] = useState(0);
