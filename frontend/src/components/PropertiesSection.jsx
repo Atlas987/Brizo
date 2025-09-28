@@ -262,22 +262,30 @@ const PropertiesSection = () => {
 
             {/* Action Buttons */}
             <div className="space-y-4">
-              <Button 
-                size="lg"
-                className="w-full bg-black text-white font-bold hover:bg-gray-800 transition-all duration-200 shadow-lg hover:shadow-xl py-4 text-lg rounded-2xl"
-              >
-                Book Virtual Tour
-              </Button>
-              <div className="grid grid-cols-2 gap-4">
+              <Link to={`/${selectedProperty.prop_id}`}>
                 <Button 
-                  variant="outline"
-                  className="border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-200 font-bold rounded-2xl"
+                  size="lg"
+                  className="w-full bg-black text-white font-bold hover:bg-gray-800 transition-all duration-200 shadow-lg hover:shadow-xl py-4 text-lg rounded-2xl"
                 >
-                  View Details
+                  View Full Details
                 </Button>
+              </Link>
+              <div className="grid grid-cols-2 gap-4">
+                <Link to={`/${selectedProperty.prop_id}`}>
+                  <Button 
+                    variant="outline"
+                    className="w-full border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-200 font-bold rounded-2xl"
+                  >
+                    View Details
+                  </Button>
+                </Link>
                 <Button 
                   variant="outline"
                   className="border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-200 font-bold rounded-2xl"
+                  onClick={() => {
+                    const message = encodeURIComponent(`Hi! I'm interested in ${selectedProperty.name}. Can you provide more details?`);
+                    window.open(`https://wa.me/91${brandData.supportWhatsapp}?text=${message}`, '_blank');
+                  }}
                 >
                   Contact Agent
                 </Button>
