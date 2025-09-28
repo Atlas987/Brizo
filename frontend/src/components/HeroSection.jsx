@@ -4,48 +4,36 @@ import { Button } from './ui/button';
 import { brandData, properties } from '../mock';
 
 const HeroSection = () => {
-  const [searchLocation, setSearchLocation] = useState('');
-  const [filteredCities, setFilteredCities] = useState([]);
-  const [showSuggestions, setShowSuggestions] = useState(false);
-
-  const handleSearchChange = (e) => {
-    const value = e.target.value;
-    setSearchLocation(value);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  // Auto-scroll through property images
+  useEffect(() => {
+    const allImages = properties.flatMap(property => property.images).slice(0, 8);
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % allImages.length);
+    }, 3000);
     
-    if (value.trim()) {
-      const filtered = cities.filter(city => 
-        city.toLowerCase().includes(value.toLowerCase())
-      );
-      setFilteredCities(filtered);
-      setShowSuggestions(true);
-    } else {
-      setShowSuggestions(false);
-    }
-  };
+    return () => clearInterval(interval);
+  }, []);
 
-  const handleCitySelect = (city) => {
-    setSearchLocation(city);
-    setShowSuggestions(false);
-  };
+  const allImages = properties.flatMap(property => property.images).slice(0, 8);
 
-  const propertyTypes = [
+  const uniqueFeatures = [
     {
-      title: "PG for Students",
-      description: "Affordable and comfortable stays for students",
-      icon: <Users className="h-6 w-6" />,
-      price: "Starting ₹8,000/month"
+      icon: <CheckCircle className="h-5 w-5" />,
+      text: "30-Second Smart KYC"
     },
     {
-      title: "Co-living for Professionals", 
-      description: "Premium shared accommodations with modern amenities",
-      icon: <Home className="h-6 w-6" />,
-      price: "Starting ₹12,000/month"
+      icon: <Zap className="h-5 w-5" />,
+      text: "Zero Paperwork Living"
     },
     {
-      title: "Studio Apartments",
-      description: "Fully furnished independent living spaces",
-      icon: <Star className="h-6 w-6" />,
-      price: "Starting ₹18,000/month"
+      icon: <Shield className="h-5 w-5" />,
+      text: "Complete Tenant Insurance"
+    },
+    {
+      icon: <Star className="h-5 w-5" />,
+      text: "AI-Powered Smart App"
     }
   ];
 
