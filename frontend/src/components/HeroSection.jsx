@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { Search, MapPin, Home, Users, Star, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Star, ArrowRight, CheckCircle, Zap, Shield } from 'lucide-react';
 import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { brandData, cities } from '../mock';
+import { brandData, properties } from '../mock';
 
 const HeroSection = () => {
   const [searchLocation, setSearchLocation] = useState('');
