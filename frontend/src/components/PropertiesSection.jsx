@@ -301,41 +301,50 @@ const PropertiesSection = () => {
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {properties.map((property, index) => (
-              <Card 
-                key={property.id}
-                className={`cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-3 rounded-3xl overflow-hidden ${
-                  currentPropertyIndex === index 
-                    ? 'border-black shadow-xl scale-105' 
-                    : 'border-gray-200 hover:border-gray-400'
-                }`}
-                onClick={() => {
-                  setCurrentPropertyIndex(index);
-                  setSelectedProperty(property);
-                  setCurrentImageIndex(0);
-                }}
-              >
-                <div className="p-0">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img 
-                      src={property.images[0]} 
-                      alt={property.name}
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h4 className="font-bold text-sm mb-2 line-clamp-2 text-black">
-                      {property.name}
-                    </h4>
-                    <div className="flex items-center text-xs text-gray-600 mb-3">
-                      <MapPin className="h-3 w-3 mr-1" />
-                      {property.location}
+              <div key={property.id} className="space-y-2">
+                <Card 
+                  className={`cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-3 rounded-3xl overflow-hidden ${
+                    currentPropertyIndex === index 
+                      ? 'border-black shadow-xl scale-105' 
+                      : 'border-gray-200 hover:border-gray-400'
+                  }`}
+                  onClick={() => {
+                    setCurrentPropertyIndex(index);
+                    setSelectedProperty(property);
+                    setCurrentImageIndex(0);
+                  }}
+                >
+                  <div className="p-0">
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img 
+                        src={property.images[0]} 
+                        alt={property.name}
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                      />
                     </div>
-                    <div className="text-lg font-black text-black">
-                      ₹{property.rentFrom.toLocaleString()}/mo
+                    <div className="p-4">
+                      <h4 className="font-bold text-sm mb-2 line-clamp-2 text-black">
+                        {property.name}
+                      </h4>
+                      <div className="flex items-center text-xs text-gray-600 mb-3">
+                        <MapPin className="h-3 w-3 mr-1" />
+                        {property.location}
+                      </div>
+                      <div className="text-lg font-black text-black">
+                        ₹{property.rentFrom.toLocaleString()}/mo
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+                <Link to={`/${property.prop_id}`}>
+                  <Button 
+                    size="sm"
+                    className="w-full bg-black text-white hover:bg-gray-800 font-semibold rounded-xl text-xs"
+                  >
+                    View Full Details
+                  </Button>
+                </Link>
+              </div>
             ))}
           </div>
         </div>
