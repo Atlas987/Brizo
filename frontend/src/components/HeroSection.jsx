@@ -108,10 +108,10 @@ const HeroSection = () => {
           </div>
 
           {/* Right Content - Auto-Scrolling Images */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {/* Main Large Image */}
             <div className="relative group">
-              <div className="aspect-[4/3] overflow-hidden rounded-3xl bg-gray-200 border-4 border-black shadow-2xl">
+              <div className="aspect-[4/3] overflow-hidden rounded-3xl bg-gray-200 border-3 border-black shadow-xl">
                 {allImages.length > 0 && (
                   <img 
                     src={allImages[currentImageIndex]} 
@@ -122,25 +122,25 @@ const HeroSection = () => {
               </div>
               
               {/* Image Overlay Info */}
-              <div className="absolute bottom-4 left-4 right-4 bg-black/80 backdrop-blur-sm text-white p-4 rounded-2xl">
-                <h4 className="font-bold text-lg">Premium Co-living Spaces</h4>
-                <p className="text-gray-300 text-sm">Mumbai's finest PG accommodations</p>
+              <div className="absolute bottom-3 left-3 right-3 bg-black/80 backdrop-blur-sm text-white p-3 rounded-xl">
+                <h4 className="font-bold text-sm">Premium Co-living Spaces</h4>
+                <p className="text-gray-300 text-xs">Mumbai's finest PG accommodations</p>
               </div>
               
               {/* Auto-scroll indicator */}
-              <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm">
+              <div className="absolute top-3 right-3 bg-black/70 text-white px-2 py-1 rounded-full text-xs">
                 {currentImageIndex + 1} / {allImages.length}
               </div>
             </div>
 
             {/* Image Thumbnails */}
-            <div className="grid grid-cols-4 gap-3">
+            <div className="grid grid-cols-4 gap-2">
               {allImages.slice(0, 4).map((image, index) => (
                 <div 
                   key={index}
-                  className={`aspect-square overflow-hidden rounded-2xl border-2 transition-all duration-300 ${
+                  className={`aspect-square overflow-hidden rounded-xl border-2 transition-all duration-300 ${
                     currentImageIndex % 4 === index 
-                      ? 'border-black scale-105 shadow-lg' 
+                      ? 'border-black scale-105 shadow-md' 
                       : 'border-gray-300'
                   }`}
                 >
@@ -154,14 +154,14 @@ const HeroSection = () => {
             </div>
 
             {/* Quick Stats */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="text-center p-4 bg-white border-2 border-gray-200 rounded-2xl">
-                <div className="text-2xl font-black text-black">6500+</div>
-                <div className="text-sm text-gray-600 font-medium">Happy Residents</div>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="text-center p-3 bg-white border-2 border-gray-200 rounded-xl">
+                <div className="text-xl font-black text-black">6500+</div>
+                <div className="text-xs text-gray-600 font-medium">Happy Residents</div>
               </div>
-              <div className="text-center p-4 bg-white border-2 border-gray-200 rounded-2xl">
-                <div className="text-2xl font-black text-black">4.8★</div>
-                <div className="text-sm text-gray-600 font-medium">Average Rating</div>
+              <div className="text-center p-3 bg-white border-2 border-gray-200 rounded-xl">
+                <div className="text-xl font-black text-black">4.8★</div>
+                <div className="text-xs text-gray-600 font-medium">Average Rating</div>
               </div>
             </div>
           </div>
