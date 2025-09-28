@@ -13,11 +13,11 @@ const FeaturesSection = () => {
   };
 
   return (
-    <section id="features" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section id="features" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6" style={{ color: brandData.textColor }}>
+          <h2 className="text-4xl lg:text-6xl font-black mb-6 text-black">
             What Makes Us Different?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -33,36 +33,46 @@ const FeaturesSection = () => {
             return (
               <div 
                 key={index}
-                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2"
+                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-black hover:-translate-y-2"
               >
-                {/* Feature Image */}
-                <div className="relative mb-6 overflow-hidden rounded-2xl">
+                {/* Icon and Title */}
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="p-4 bg-black text-white rounded-2xl group-hover:scale-110 transition-transform duration-300">
+                    <IconComponent className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-black">
+                    {feature.title}
+                  </h3>
+                </div>
+
+                {/* Feature Image - Fixed sizing */}
+                <div className="mb-6 overflow-hidden rounded-2xl bg-gray-100">
                   <img 
                     src={feature.imgUrl} 
                     alt={feature.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      // Fallback for broken images
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
                   />
                   <div 
-                    className="absolute top-4 left-4 p-3 rounded-xl bg-white/90 backdrop-blur-sm shadow-lg"
-                    style={{ color: brandData.brandColor }}
+                    className="hidden w-full h-48 bg-black text-white items-center justify-center rounded-2xl"
                   >
-                    <IconComponent className="h-6 w-6" />
+                    <IconComponent className="h-12 w-12" />
                   </div>
                 </div>
 
                 {/* Feature Content */}
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold" style={{ color: brandData.textColor }}>
-                    {feature.title}
-                  </h3>
                   <p className="text-gray-600 leading-relaxed">
                     {feature.body}
                   </p>
                   
                   {/* Learn More Link */}
                   <button 
-                    className="inline-flex items-center text-sm font-semibold group-hover:translate-x-1 transition-transform duration-200"
-                    style={{ color: brandData.brandColor }}
+                    className="inline-flex items-center text-sm font-bold text-black group-hover:translate-x-1 transition-transform duration-200 hover:underline"
                   >
                     Learn More 
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,28 +86,19 @@ const FeaturesSection = () => {
         </div>
 
         {/* Bottom CTA Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-3xl p-8 md:p-12">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: brandData.textColor }}>
+        <div className="mt-16">
+          <div className="bg-black text-white rounded-3xl p-8 md:p-12 text-center">
+            <h3 className="text-3xl md:text-4xl font-black mb-4">
               Ready to Experience Smart Living?
             </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg">
               Join thousands of satisfied residents who've made Brizo Stay their home. Book a virtual tour today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
-                className="px-8 py-3 text-white font-semibold rounded-xl hover:bg-green-700 transition-all duration-200 shadow-lg hover:shadow-xl"
-                style={{ backgroundColor: brandData.brandColor }}
-              >
+              <button className="px-8 py-4 bg-white text-black font-bold rounded-2xl hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
                 Schedule Virtual Tour
               </button>
-              <button 
-                className="px-8 py-3 font-semibold rounded-xl border-2 transition-all duration-200 hover:bg-green-50"
-                style={{ 
-                  borderColor: brandData.brandColor, 
-                  color: brandData.brandColor 
-                }}
-              >
+              <button className="px-8 py-4 font-bold rounded-2xl border-2 border-white text-white transition-all duration-200 hover:bg-white hover:text-black">
                 Download Brochure
               </button>
             </div>

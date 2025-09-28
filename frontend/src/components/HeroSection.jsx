@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, MapPin, Home, Users, Star } from 'lucide-react';
+import { Search, MapPin, Home, Users, Star, ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { brandData, cities } from '../mock';
@@ -33,78 +33,86 @@ const HeroSection = () => {
     {
       title: "PG for Students",
       description: "Affordable and comfortable stays for students",
-      icon: <Users className="h-8 w-8" />,
+      icon: <Users className="h-6 w-6" />,
       price: "Starting ₹8,000/month"
     },
     {
       title: "Co-living for Professionals", 
       description: "Premium shared accommodations with modern amenities",
-      icon: <Home className="h-8 w-8" />,
+      icon: <Home className="h-6 w-6" />,
       price: "Starting ₹12,000/month"
     },
     {
       title: "Studio Apartments",
       description: "Fully furnished independent living spaces",
-      icon: <Star className="h-8 w-8" />,
+      icon: <Star className="h-6 w-6" />,
       price: "Starting ₹18,000/month"
     }
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-16">
-      {/* Background with subtle gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-white to-blue-50"></div>
-      
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 left-0 w-72 h-72 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000"></div>
+    <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-16 bg-white">
+      {/* Subtle geometric pattern background */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            radial-gradient(circle at 25% 25%, #000 2px, transparent 2px),
+            radial-gradient(circle at 75% 75%, #000 2px, transparent 2px)
+          `,
+          backgroundSize: '50px 50px'
+        }}></div>
+      </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                <span style={{ color: brandData.textColor }}>Come, live the</span>
+            <div className="space-y-6">
+              <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium">
+                <Star className="h-4 w-4 mr-2" />
+                Mumbai's #1 Co-living Brand
+              </div>
+              
+              <h1 className="text-5xl lg:text-7xl font-black leading-tight">
+                <span className="text-black">Come, live the</span>
                 <br />
-                <span style={{ color: brandData.brandColor }}>Brizo way</span>
+                <span className="text-black italic">Brizo</span> way
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
-                {brandData.description}
+              
+              <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
+                Experience premium co-living with smart technology, modern amenities, and a vibrant community in Mumbai's prime locations.
               </p>
             </div>
 
             {/* Search Section */}
-            <div className="bg-white rounded-2xl p-6 shadow-xl border border-gray-100 relative">
-              <h3 className="text-lg font-semibold mb-4" style={{ color: brandData.textColor }}>
+            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200 relative">
+              <h3 className="text-lg font-bold mb-6 text-black flex items-center">
+                <MapPin className="h-5 w-5 mr-2" />
                 Find your perfect stay
               </h3>
               <div className="flex gap-3">
                 <div className="flex-1 relative">
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                     <Input
                       type="text"
-                      placeholder="Search your locality (e.g., Kurla, Ghatkopar)"
+                      placeholder="Search locality (Kurla, Ghatkopar, BKC...)"
                       value={searchLocation}
                       onChange={handleSearchChange}
-                      className="pl-10 py-3 text-lg border-2 border-gray-200 focus:border-green-500 rounded-xl"
+                      className="py-4 text-lg border-2 border-gray-300 focus:border-black rounded-2xl bg-white"
                     />
                   </div>
                   
                   {/* City Suggestions */}
                   {showSuggestions && filteredCities.length > 0 && (
-                    <div className="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-xl mt-2 shadow-lg z-20 max-h-48 overflow-y-auto">
+                    <div className="absolute top-full left-0 right-0 bg-white border-2 border-gray-200 rounded-2xl mt-2 shadow-xl z-20 max-h-48 overflow-y-auto">
                       {filteredCities.map((city, index) => (
                         <button
                           key={index}
                           onClick={() => handleCitySelect(city)}
-                          className="w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0"
+                          className="w-full text-left px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 flex items-center"
                         >
-                          <div className="flex items-center space-x-2">
-                            <MapPin className="h-4 w-4 text-gray-400" />
-                            <span>{city}, Mumbai</span>
-                          </div>
+                          <MapPin className="h-4 w-4 text-gray-400 mr-3" />
+                          <span className="font-medium">{city}, Mumbai</span>
                         </button>
                       ))}
                     </div>
@@ -112,8 +120,7 @@ const HeroSection = () => {
                 </div>
                 <Button 
                   size="lg"
-                  className="px-8 py-3 text-white hover:bg-green-700 transition-all duration-200 rounded-xl"
-                  style={{ backgroundColor: brandData.brandColor }}
+                  className="px-8 py-4 bg-black text-white hover:bg-gray-800 transition-all duration-200 rounded-2xl font-semibold"
                 >
                   <Search className="h-5 w-5 mr-2" />
                   Search
@@ -122,63 +129,67 @@ const HeroSection = () => {
             </div>
 
             {/* Quick Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-2xl font-bold" style={{ color: brandData.brandColor }}>100+</div>
-                <div className="text-sm text-gray-600">Properties</div>
+                <div className="text-3xl font-black text-black">100+</div>
+                <div className="text-sm text-gray-600 font-medium">Properties</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold" style={{ color: brandData.brandColor }}>6500+</div>
-                <div className="text-sm text-gray-600">Happy Tenants</div>
+                <div className="text-3xl font-black text-black">6500+</div>
+                <div className="text-sm text-gray-600 font-medium">Happy Tenants</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold" style={{ color: brandData.brandColor }}>1000+</div>
-                <div className="text-sm text-gray-600">Beds</div>
+                <div className="text-3xl font-black text-black">1000+</div>
+                <div className="text-sm text-gray-600 font-medium">Beds</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold" style={{ color: brandData.brandColor }}>20+</div>
-                <div className="text-sm text-gray-600">Locations</div>
+                <div className="text-3xl font-black text-black">20+</div>
+                <div className="text-sm text-gray-600 font-medium">Locations</div>
               </div>
             </div>
           </div>
 
           {/* Right Content - Property Types */}
-          <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-center mb-8" style={{ color: brandData.textColor }}>
+          <div className="space-y-4">
+            <h2 className="text-3xl font-bold text-center mb-8 text-black">
               Choose Your Stay
             </h2>
             {propertyTypes.map((type, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 cursor-pointer hover:-translate-y-1"
+                className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 cursor-pointer hover:-translate-y-1 hover:border-black"
               >
-                <div className="flex items-start space-x-4">
-                  <div 
-                    className="p-3 rounded-xl flex-shrink-0"
-                    style={{ backgroundColor: `${brandData.brandColor}15`, color: brandData.brandColor }}
-                  >
-                    {type.icon}
+                <div className="flex items-start justify-between">
+                  <div className="flex items-start space-x-4 flex-1">
+                    <div className="p-3 bg-black text-white rounded-2xl flex-shrink-0">
+                      {type.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold mb-2 text-black">
+                        {type.title}
+                      </h3>
+                      <p className="text-gray-600 mb-3">{type.description}</p>
+                      <p className="text-sm font-bold text-black">
+                        {type.price}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-2" style={{ color: brandData.textColor }}>
-                      {type.title}
-                    </h3>
-                    <p className="text-gray-600 mb-2">{type.description}</p>
-                    <p className="text-sm font-semibold" style={{ color: brandData.brandColor }}>
-                      {type.price}
-                    </p>
-                  </div>
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    className="border-2 hover:text-white hover:bg-green-600 transition-all duration-200"
-                    style={{ borderColor: brandData.brandColor, color: brandData.brandColor }}
-                  >
-                    Explore
-                  </Button>
+                  <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-black group-hover:translate-x-1 transition-all duration-200" />
                 </div>
               </div>
             ))}
+            
+            {/* CTA */}
+            <div className="mt-8 p-6 bg-black text-white rounded-3xl text-center">
+              <h3 className="font-bold text-lg mb-2">Ready to move in?</h3>
+              <p className="text-gray-300 text-sm mb-4">Book a virtual tour today</p>
+              <Button 
+                variant="secondary" 
+                className="bg-white text-black hover:bg-gray-100 font-semibold"
+              >
+                Schedule Tour
+              </Button>
+            </div>
           </div>
         </div>
       </div>

@@ -3,8 +3,9 @@ export const brandData = {
   name: "Brizo Stay",
   logo: "https://rentok-marketplace.s3.ap-south-1.amazonaws.com/Brand+page+assets+/Brizo+Stays/WhatsApp+Image+2025-08-04+at+21.18.57.jpeg",
   brandImage: "https://rentok-marketplace.s3.ap-south-1.amazonaws.com/marketplace-dump/microsite/3800089600A/sample-brand.webp",
-  brandColor: "#7BB661",
-  textColor: "#1D1C2E",
+  brandColor: "#000000", // Black theme
+  accentColor: "#ffffff", // White accent
+  textColor: "#000000",
   tagline: "Your Home Away From Home",
   description: "Brizo Stay provides a wide range of options from hostels, PGs to studio apartments to fully furnished flats. Have a look at our properties and choose for yourself.",
   supportWhatsapp: "8097734490",
@@ -76,7 +77,8 @@ export const properties = [
     rentFrom: 15000,
     images: [
       "https://rentokstorage1753704434.blob.core.windows.net/due-type-images/due-type-images/CzaoI0lnMCf3YjdarDInxUot4XZ2/1754820513174-1000117972.jpg",
-      "https://rentokstorage1753704434.blob.core.windows.net/due-type-images/due-type-images/CzaoI0lnMCf3YjdarDInxUot4XZ2/1754820513177-1000117975.jpg"
+      "https://rentokstorage1753704434.blob.core.windows.net/due-type-images/due-type-images/CzaoI0lnMCf3YjdarDInxUot4XZ2/1754820513177-1000117975.jpg",
+      "https://rentokstorage1753704434.blob.core.windows.net/due-type-images/due-type-images/CzaoI0lnMCf3YjdarDInxUot4XZ2/1754820513178-1000117978.jpg"
     ],
     sharingTypes: ["2 Sharing", "3 Sharing"],
     amenities: ["High-speed wifi", "24/7 Security", "Attached Washroom", "Power Backup"]
@@ -88,7 +90,8 @@ export const properties = [
     rentFrom: 10000,
     images: [
       "https://rentok-marketplace.s3.ap-south-1.amazonaws.com/PropertyImages/ea5d592a-8b57-4b22-a55c-0d89349f32a6/1753772695020_j5obao4jq3qro506g3qrn.webp",
-      "https://rentok-marketplace.s3.ap-south-1.amazonaws.com/PropertyImages/ea5d592a-8b57-4b22-a55c-0d89349f32a6/1753772695020_djgk01mkeljbsnj8m5mbcc.webp"
+      "https://rentok-marketplace.s3.ap-south-1.amazonaws.com/PropertyImages/ea5d592a-8b57-4b22-a55c-0d89349f32a6/1753772695020_djgk01mkeljbsnj8m5mbcc.webp",
+      "https://rentok-marketplace.s3.ap-south-1.amazonaws.com/PropertyImages/ea5d592a-8b57-4b22-a55c-0d89349f32a6/1753772695020_qih5zcv0d8tbph98ip0sj.webp"
     ],
     sharingTypes: ["2 Sharing", "3 Sharing"],
     amenities: ["High-speed wifi", "24/7 Security", "Common Kitchen", "Gym"]
@@ -100,7 +103,8 @@ export const properties = [
     rentFrom: 10000,
     images: [
       "https://rentokstorage1753704434.blob.core.windows.net/room-images/RoomImages/1755601748466.jpg",
-      "https://rentokstorage1753704434.blob.core.windows.net/room-images/RoomImages/1755601781641.jpg"
+      "https://rentokstorage1753704434.blob.core.windows.net/room-images/RoomImages/1755601781641.jpg",
+      "https://rentokstorage1753704434.blob.core.windows.net/room-images/RoomImages/1755601805378.jpg"
     ],
     sharingTypes: ["2 Sharing", "3 Sharing"],
     amenities: ["High-speed wifi", "24/7 Security", "Common TV", "Parking"]
@@ -112,10 +116,50 @@ export const properties = [
     rentFrom: 10000,
     images: [
       "https://rentok-storage-cdn.azureedge.net/static-assets/PropertyImages/23d7c79a-a987-4fde-a977-81f27d855104/1757508754276_2uhoeu8ooaphkcth29ubao.webp",
-      "https://rentok-storage-cdn.azureedge.net/static-assets/PropertyImages/23d7c79a-a987-4fde-a977-81f27d855104/1757508754277_mkanwvimtrlsk9lir8rm9l.webp"
+      "https://rentok-storage-cdn.azureedge.net/static-assets/PropertyImages/23d7c79a-a987-4fde-a977-81f27d855104/1757508754277_mkanwvimtrlsk9lir8rm9l.webp",
+      "https://rentok-storage-cdn.azureedge.net/static-assets/PropertyImages/23d7c79a-a987-4fde-a977-81f27d855104/1757508754277_4aq8fhivtjygdxvyq75r2j.webp"
     ],
     sharingTypes: ["2 Sharing", "3 Sharing"],
     amenities: ["High-speed wifi", "24/7 Security", "Common Kitchen", "CCTV"]
+  }
+];
+
+export const galleryImages = [
+  {
+    id: 1,
+    title: "Modern Living Rooms",
+    category: "Living Space",
+    url: "https://rentokstorage1753704434.blob.core.windows.net/due-type-images/due-type-images/CzaoI0lnMCf3YjdarDInxUot4XZ2/1754820513174-1000117972.jpg"
+  },
+  {
+    id: 2,
+    title: "Cozy Bedrooms",
+    category: "Bedroom",
+    url: "https://rentokstorage1753704434.blob.core.windows.net/room-images/RoomImages/1755601748466.jpg"
+  },
+  {
+    id: 3,
+    title: "Fully Equipped Kitchen",
+    category: "Kitchen",
+    url: "https://rentokstorage1753704434.blob.core.windows.net/due-type-images/due-type-images/CzaoI0lnMCf3YjdarDInxUot4XZ2/1754820692783-1000117982.jpg"
+  },
+  {
+    id: 4,
+    title: "Common Areas",
+    category: "Common Area",
+    url: "https://rentok-marketplace.s3.ap-south-1.amazonaws.com/PropertyImages/ea5d592a-8b57-4b22-a55c-0d89349f32a6/1753772695020_j5obao4jq3qro506g3qrn.webp"
+  },
+  {
+    id: 5,
+    title: "Clean Bathrooms",
+    category: "Bathroom",
+    url: "https://rentokstorage1753704434.blob.core.windows.net/due-type-images/due-type-images/CzaoI0lnMCf3YjdarDInxUot4XZ2/1754820710910-1000117986.jpg"
+  },
+  {
+    id: 6,
+    title: "Workspace Areas",
+    category: "Workspace",
+    url: "https://rentok-storage-cdn.azureedge.net/static-assets/PropertyImages/23d7c79a-a987-4fde-a977-81f27d855104/1757508754276_2uhoeu8ooaphkcth29ubao.webp"
   }
 ];
 

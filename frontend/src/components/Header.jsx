@@ -9,27 +9,26 @@ const Header = () => {
   const navigation = [
     { name: 'Home', href: '#home' },
     { name: 'Properties', href: '#properties' },
+    { name: 'Gallery', href: '#gallery' },
     { name: 'Features', href: '#features' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' }
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img 
-              src={brandData.logo} 
-              alt={brandData.name}
-              className="h-10 w-auto rounded-lg"
-            />
+            <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">B</span>
+            </div>
             <div>
-              <h1 className="text-xl font-bold" style={{ color: brandData.textColor }}>
+              <h1 className="text-xl font-bold text-black">
                 {brandData.name}
               </h1>
-              <p className="text-sm text-gray-500">{brandData.tagline}</p>
+              <p className="text-sm text-gray-600">{brandData.tagline}</p>
             </div>
           </div>
 
@@ -39,7 +38,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium"
+                className="text-gray-700 hover:text-black transition-colors duration-200 font-medium"
               >
                 {item.name}
               </a>
@@ -53,8 +52,7 @@ const Header = () => {
               <span>{brandData.supportNumber}</span>
             </div>
             <Button 
-              className="text-white hover:bg-green-700 transition-all duration-200"
-              style={{ backgroundColor: brandData.brandColor }}
+              className="bg-black text-white hover:bg-gray-800 transition-all duration-200"
             >
               <MapPin className="h-4 w-4 mr-2" />
               Find Properties
@@ -85,7 +83,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors duration-200"
+                  className="block px-3 py-2 text-gray-700 hover:text-black transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -97,8 +95,7 @@ const Header = () => {
                   <span>{brandData.supportNumber}</span>
                 </div>
                 <Button 
-                  className="w-full text-white hover:bg-green-700"
-                  style={{ backgroundColor: brandData.brandColor }}
+                  className="w-full bg-black text-white hover:bg-gray-800"
                 >
                   <MapPin className="h-4 w-4 mr-2" />
                   Find Properties
